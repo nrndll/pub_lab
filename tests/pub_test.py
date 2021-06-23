@@ -1,5 +1,4 @@
 import unittest
-from unittest.case import TestCase
 from src.pub import *
 
 class TestPub(unittest.TestCase):
@@ -12,3 +11,4 @@ class TestPub(unittest.TestCase):
 
     def test_pub_has_counter(self):
         self.assertEqual(100, self.pub.till)
+

@@ -1,5 +1,4 @@
 import unittest
-from unittest.case import TestCase
 from src.drink import *
 
 class TestDrink(unittest.TestCase):

@@ -7,7 +7,7 @@ class TestCustomer(unittest.TestCase):
     def setUp(self):
         self.customer = Customer("Jakub", 1000, 30)
         self.pub = Pub("Star Bar", 0)
-        self.drink = Drink("Absinth", 30)
+        self.drink = Drink("Absinth", 30, 80)
     
     def tests_customer_has_name(self):
         self.assertEqual("Jakub", self.customer.name)

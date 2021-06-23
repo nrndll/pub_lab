@@ -10,6 +10,8 @@ class Customer:
         self.wallet -= amount
 
     def buy_drink(self, drink, pub):
+        if pub.refuse_service(self):
+            return "No!"
         if self.check_age():
             self.reduce_wallet(drink.price)
             pub.increase_till(drink.price)

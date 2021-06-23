@@ -3,21 +3,12 @@ class Pub:
         self.name = name
         self.till = till
         self.drinks = []
-        
-        # {
-        #     "beer" : 10,
-        #     "absinth" : 30,
-        #     "whiskey" : 20
-        # }
 
     def increase_till(self, amount):
         self.till += amount
 
-    # def find_drink_by_name(self, name):
-    #     for drink in self.drinks:
-    #         if drink == name:
-    #             return drink
-
-    # def check_age(self):
-    #     if self.customer.age >= 18:
-    #         return True
+    def refuse_service(self, customer):
+        if customer.drunkeness >= 100:
+            return True
+        else:
+            return False

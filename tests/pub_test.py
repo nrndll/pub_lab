@@ -22,3 +22,6 @@ class TestPub(unittest.TestCase):
         expected = True
         actual = self.customer.check_age()
         self.assertEqual(True, actual)
+
+    def test_refuse_service(self):
+        self.assertEqual(False, self.pub.refuse_service(self.customer))

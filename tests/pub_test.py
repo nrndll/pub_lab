@@ -18,10 +18,9 @@ class TestPub(unittest.TestCase):
         self.pub.increase_till(10)
         self.assertEqual(110, self.pub.till)
 
-    def test_check_age(self):
-        expected = True
-        actual = self.customer.check_age()
-        self.assertEqual(True, actual)
-
-    def test_refuse_service(self):
+    def test_refuse_service_no(self):
         self.assertEqual(False, self.pub.refuse_service(self.customer))
+    
+    def test_refuse_service_yes(self):
+        self.customer.drunkeness = 200
+        self.assertEqual(True, self.pub.refuse_service(self.customer))

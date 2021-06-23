@@ -11,3 +11,7 @@ class Customer:
     def buy_drink(self, drink):
         self.reduce_wallet(drink.price)
         self.pub.increase_till(drink.price)
+
+    def check_age(self):
+        if self.age >= 18:
+            return True

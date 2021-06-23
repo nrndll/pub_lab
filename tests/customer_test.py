@@ -23,10 +23,11 @@ class TestCustomer(unittest.TestCase):
         # drink = Drink("Absinth", 30)
         # drink = self.drink
         # pub = self.pub
-        self.customer.reduce_wallet(self.drink.price)
-        self.pub.increase_till(self.drink.price)
-        self.assertEqual(970, self.customer.wallet)
-        self.assertEqual(30, self.pub.till)
+        if self.customer.check_age():
+            self.customer.reduce_wallet(self.drink.price)
+            self.pub.increase_till(self.drink.price)
+            self.assertEqual(970, self.customer.wallet)
+            self.assertEqual(30, self.pub.till)
 
         
 

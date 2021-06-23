@@ -21,3 +21,8 @@ class Customer:
         if self.age >= 18:
             return True
         return False
+
+    def buy_food(self, food, pub):
+        self.reduce_wallet(food.price)
+        pub.increase_till(food.price)
+        self.drunkeness -= food.rejuvenation_level

@@ -3,15 +3,17 @@ class Customer:
         self.name = name
         self.wallet = wallet
         self.age = age
-        self.drunkeness_level = 0
+        self.drunkeness = 0
         
 
     def reduce_wallet(self, amount):
         self.wallet -= amount
 
-    def buy_drink(self, drink):
-        self.reduce_wallet(drink.price)
-        self.pub.increase_till(drink.price)
+    def buy_drink(self, drink, pub):
+        if self.check_age():
+            self.reduce_wallet(drink.price)
+            pub.increase_till(drink.price)
+            self.drunkeness += drink.alcohol_level
 
     def check_age(self):
         if self.age >= 18:

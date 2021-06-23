@@ -9,7 +9,7 @@ class TestPub(unittest.TestCase):
     def setUp(self):
         self.pub = Pub("Stonefire Tavern", 100)
         self.customer = Customer("Jakub", 1000, 30)
-        self.drink = Drink("Absinth", 30, 80)
+        self.drink = Drink("Absinth", 30, 80, 10)
         self.food = Food("Pakora", 5, 20)
 
     def test_pub_has_name(self):

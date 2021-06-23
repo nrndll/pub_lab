@@ -8,7 +8,7 @@ class TestCustomer(unittest.TestCase):
     def setUp(self):
         self.customer = Customer("Jakub", 1000, 30)
         self.pub = Pub("Star Bar", 0)
-        self.drink = Drink("Absinth", 30, 80)
+        self.drink = Drink("Absinth", 30, 80, 10)
         self.food = Food("Pakora", 5, 20)
     
     def test_customer_has_name(self):

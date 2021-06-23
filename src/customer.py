@@ -20,3 +20,4 @@ class Customer:
     def check_age(self):
         if self.age >= 18:
             return True
+        return False

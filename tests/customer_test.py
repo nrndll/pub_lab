@@ -40,5 +40,15 @@ class TestCustomer(unittest.TestCase):
         self.assertEqual(30, self.pub.till)
         self.assertEqual(80, self.customer.drunkeness)
 
+    def test_buy_drink_drunk_customer(self):
+        self.customer.drunkeness = 360
+        self.customer.buy_drink(self.drink, self.pub)
+        self.assertEqual(1000, self.customer.wallet)
+        self.assertEqual(0, self.pub.till)
         
+    def test_buy_drink_customer_underage(self):
+        self.customer.age = 13
+        self.customer.buy_drink(self.drink, self.pub)
+        self.assertEqual(1000, self.customer.wallet)
+        self.assertEqual(0, self.pub.till)
 
